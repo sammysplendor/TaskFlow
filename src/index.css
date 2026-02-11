@@ -10,4 +10,5 @@ html {
 
 body {
   font-family: "Geist";
+  background-color: var(--primarybg);
 }
