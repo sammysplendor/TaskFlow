@@ -1,0 +1,36 @@
+:root {
+  /* ===== Light (Default) Mode Colors ===== */
+  --primary-color: #142959;
+  --secondary-color-1: #dbdb1e;
+  --secondary-color-2: #fbf5d5;
+
+  --accent-color-1: #f91919;
+  --accent-color-2: #257629;
+  --accent-color-3: #c9b940;
+
+  --app-bg: #f0f8ff;
+  --bg-cards: #fffff0;
+  --bg-topcard: #ffffff;
+  --primarybg: #f9fafb;
+  --features-card: #f0f8ff;
+
+  --text-primary: #111827;
+  --text-muted: #6b7280;
+
+  /* ===== Border radius ===== */
+  --border-sm: 1.4rem;
+  --border-md: 1.8rem;
+  --border-lg: 2.5rem;
+  --border-xl: 4rem;
+
+  /* ===== Shadows ===== */
+
+  /* ===== Font sizes ===== */
+  --h1-desktop: 6rem;
+  --h2-desktop: 4.5rem;
+  --h3-desktop: 3rem;
+  --subheading-desktop: 2.4rem;
+  --body-text-desktop: 2rem;
+  --cta-desktop: 2.2rem;
+  --small-text-desktop: 1.6rem;
+}
