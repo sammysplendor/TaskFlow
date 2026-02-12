@@ -1,9 +1,16 @@
 import Navbar from "../../components/navbar/Navbar.jsx"
-import "./Landing.module.css"
+import HeroSection from "./Hero.jsx"
+import style from "./Landing.module.css"
+
 
 const LandingPage = () => {
     return(
-        <Navbar />
+        <div className={style.landing}>
+            <Navbar />
+            <main>
+                <HeroSection/>
+            </main>
+        </div>
     )
 }
 

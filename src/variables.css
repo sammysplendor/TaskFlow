@@ -18,19 +18,19 @@
   --text-muted: #6b7280;
 
   /* ===== Border radius ===== */
-  --border-sm: 1.4rem;
-  --border-md: 1.8rem;
-  --border-lg: 2.5rem;
+  --border-sm: 1.1rem;
+  --border-md: 1.6rem;
+  --border-lg: 2.4rem;
   --border-xl: 4rem;
 
   /* ===== Shadows ===== */
 
   /* ===== Font sizes ===== */
-  --h1-desktop: 6rem;
+  --h1-desktop: 5.8rem;
   --h2-desktop: 4.5rem;
   --h3-desktop: 3rem;
-  --subheading-desktop: 2.4rem;
-  --body-text-desktop: 2rem;
-  --cta-desktop: 2.2rem;
-  --small-text-desktop: 1.6rem;
+  --subheading-desktop: 2rem;
+  --body-text-desktop: 1.6rem;
+  --cta-desktop: 1.7rem;
+  --small-text-desktop: 1.2rem;
 }

@@ -12,3 +12,11 @@ body {
   font-family: "Geist";
   background-color: var(--primarybg);
 }
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}

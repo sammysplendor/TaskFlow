@@ -1,0 +1,18 @@
+/* ===== CTA Button Styling ===== */
+
+.ctaContainer {
+  padding: 1.8rem;
+  background: var(--primary-color);
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-wrap: nowrap;
+  border-radius: var(--border-lg);
+}
+
+.startCta {
+  font-size: var(--cta-desktop);
+  color: var(--primarybg);
+  font-weight: 500;
+}

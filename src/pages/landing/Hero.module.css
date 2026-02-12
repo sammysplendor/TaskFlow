@@ -1,0 +1,38 @@
+/* ========== Hero section Styling ========== */
+
+.heroContentContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 10rem;
+}
+
+.heroTextContainer {
+  color: var(--text-primary);
+}
+
+.heroTextContainer h1 {
+  font-size: var(--h1-desktop);
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.heroTextContainer p {
+  font-size: var(--subheading-desktop);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.heroContentContainer img {
+  border-radius: var(--border-xl);
+  width: 90rem;
+}
+
+.heroContentContainer span {
+  font-size: var(--small-text-desktop);
+  color: var(--text-muted);
+}
