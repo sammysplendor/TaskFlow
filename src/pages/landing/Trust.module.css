@@ -1,0 +1,72 @@
+/* ========== Trust section Styling ========== */
+
+.trustSection {
+  text-align: center;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.trustSection h3 {
+  font-size: var(--h3-desktop);
+  font-weight: 500;
+}
+
+.logosTrack img {
+  width: 20rem;
+  object-fit: contain;
+}
+
+.logosContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logosTrack {
+  display: flex;
+  width: max-content;
+  gap: 4rem;
+
+  animation: scroll 25s linear infinite;
+}
+
+.logosContainer::before,
+.logosContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logosContainer::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #f9fafb 0%,
+    #f9fafb 30%,
+    transparent 100%
+  );
+}
+
+.logosContainer::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #f9fafb 0%,
+    #f9fafb 30%,
+    transparent 100%
+  );
+}
+
+/* --- Animation --- */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

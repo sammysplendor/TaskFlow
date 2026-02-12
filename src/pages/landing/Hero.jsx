@@ -21,7 +21,7 @@ const HeroSection = () => {
 
             <p><span>Trusted by teams who get things done • No credit card required</span></p>
 
-            <div>
+            <div className={heroStyle.imageWrapper}>
                 <img src={dashboardMockup} alt="Hero image" />
             </div>
         </div>
