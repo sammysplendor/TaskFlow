@@ -1,0 +1,60 @@
+/* ========== How-it-works section Styling ========== */
+
+.content img {
+  width: 70rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 2rem;
+  margin-top: 5rem;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  justify-content: start;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+}
+
+.step span {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 4rem;
+  color: var(--primarybg);
+  background: var(--primary-color);
+  font-size: var(--h3-desktop);
+  border-radius: 50%;
+}
+
+.step .text {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 0.5rem;
+}
+
+.step .text h3 {
+  font-size: var(--h3-desktop);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.step .text p {
+  font-size: var(--body-text-desktop);
+  color: var(--text-muted);
+}
+
+.supportingText {
+  font-size: var(--body-text-desktop);
+  margin-top: 6rem;
+}

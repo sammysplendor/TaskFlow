@@ -1,6 +1,6 @@
-import heroStyle from './Hero.module.css'
-import btnStyle from '../../components/common/Buttons.module.css'
-import dashboardMockup from '../../assets/images/Dashboard mockup.jpg'
+import heroStyle from '../sections-styles/Hero.module.css'
+import btnStyle from '../../../components/common/Buttons.module.css'
+import dashboardMockup from '../../../assets/images/Dashboard mockup.jpg'
 
 const HeroSection = () => {
     return(

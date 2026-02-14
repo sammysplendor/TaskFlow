@@ -1,0 +1,14 @@
+.dashboardDemo {
+  margin-top: 3.5rem;
+}
+
+.dashboardDemo img {
+  box-shadow: var(--shadow-3);
+  border-radius: var(--border-lg);
+  width: 70rem;
+  transition: all 1s ease-out;
+}
+
+.dashboardDemo img:hover {
+  width: 90rem;
+}

@@ -1,10 +1,10 @@
-import style from './Features.module.css'
+import style from '../sections-styles/Features.module.css'
 import { ClipboardList, Calendar1, ChartPie, UsersRound, LayoutDashboard, Layers } from 'lucide-react'
 
 const FeaturesSection = () => {
     return(
-        <div className={style.featuresSection}>
-            <div className={style.heading}>
+        <div className="sectionContainer">
+            <div className="sectionHeading">
                 <h2>Everything you need to stay in flow</h2>
                 <p>TaskFlow brings tasks, timelines, and team collaboration into one simple workspace.</p>
             </div>

@@ -1,28 +1,4 @@
-/* ========== Hero section Styling ========== */
-
-.featuresSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  margin: 7rem 10rem 0;
-}
-
-.featuresSection .heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  color: var(--text-primary);
-}
-
-.heading h2 {
-  font-size: var(--h2-desktop);
-}
-
-.heading p {
-  font-size: var(--subheading-desktop);
-}
+/* ========== Features section Styling ========== */
 
 .featuresContainer {
   display: grid;

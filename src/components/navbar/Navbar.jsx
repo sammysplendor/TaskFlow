@@ -4,8 +4,8 @@ import taskflowLogo from '../../assets/images/TaskFlow_logo_1.png';
 const Navbar = () => {
 return(
 <nav className={style.navbarContainer}>
-    <div>
-        <a href=""><img src={taskflowLogo} alt="" width={150}/></a>
+    <div className={style.logoContainer}>
+        <a href=""><img src={taskflowLogo} alt="TaskFlow logo" /></a>
     </div>
 
     <div className={style.navbarItems}>
