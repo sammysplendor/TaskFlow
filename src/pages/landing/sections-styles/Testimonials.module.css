@@ -1,0 +1,55 @@
+/* ========== Testimonials section Styling ========== */
+
+.reviews {
+  display: flex;
+  gap: 4rem;
+  justify-content: start;
+  margin-top: 4rem;
+}
+
+.review {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: start;
+  align-items: start;
+  padding: 2rem;
+  color: var(--text-primary);
+  border-radius: var(--border-lg);
+  box-shadow: var(--shadow-2);
+  background: var(--primarybg);
+  font-size: var(--small-text-desktop);
+}
+
+.review .name {
+  margin-top: 1rem;
+}
+
+.review .role span {
+  color: var(--text-muted);
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  margin-top: 8rem;
+  color: var(--text-primary);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat .number {
+  font-size: var(--h1-desktop);
+}
+
+.stat .text {
+  font-size: var(--small-text-desktop);
+}

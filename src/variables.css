@@ -25,8 +25,8 @@
 
   /* ===== Shadows ===== */
   --shadow-1: -2px 1px 8px #929090;
-  --shadow-2: 0 4px 10px #929090;
-  --shadow-3: 0 20px 10px #929090;
+  --shadow-2: 0 6px 12px #9c9a9a;
+  --shadow-3: 0 25px 50px #9c9a9a;
 
   /* ===== Font sizes ===== */
   --h1-desktop: 5.8rem;
