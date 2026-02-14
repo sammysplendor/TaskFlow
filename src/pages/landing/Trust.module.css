@@ -3,12 +3,13 @@
 .trustSection {
   text-align: center;
   overflow: hidden;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .trustSection h3 {
   font-size: var(--h3-desktop);
   font-weight: 500;
+  color: var(--text-muted);
 }
 
 .logosTrack img {
