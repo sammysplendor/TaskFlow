@@ -23,6 +23,10 @@ ul {
   list-style: none;
 }
 
+button {
+  border: none;
+}
+
 .sectionContainer {
   display: flex;
   flex-direction: column;

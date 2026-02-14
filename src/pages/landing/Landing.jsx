@@ -5,6 +5,7 @@ import FeaturesSection from "./sections/Features.jsx"
 import HowItWorks from "./sections/How-it-works.jsx"
 import Demo from "./sections/Demo.jsx"
 import TestimonialsSection from "./sections/Testimonials.jsx"
+import PricingSection from "./sections/Pricing.jsx"
 import style from "./Landing.module.css"
 
 
@@ -19,6 +20,7 @@ const LandingPage = () => {
                     <HowItWorks />
                     <Demo />
                     <TestimonialsSection />
+                    <PricingSection />
                 </main>
         </div>
     )
