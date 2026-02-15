@@ -32,7 +32,7 @@
   height: 4rem;
   color: var(--primarybg);
   background: var(--primary-color);
-  font-size: var(--h3-desktop);
+  font-size: var(--h3);
   border-radius: 50%;
 }
 
@@ -44,17 +44,17 @@
 }
 
 .step .text h3 {
-  font-size: var(--h3-desktop);
+  font-size: var(--h3);
   color: var(--text-primary);
   font-weight: 500;
 }
 
 .step .text p {
-  font-size: var(--body-text-desktop);
+  font-size: var(--body-text);
   color: var(--text-muted);
 }
 
 .supportingText {
-  font-size: var(--body-text-desktop);
+  font-size: var(--body-text);
   margin-top: 6rem;
 }

@@ -7,6 +7,7 @@ import HowItWorks from "./sections/How-it-works.jsx"
 import Demo from "./sections/Demo.jsx"
 import TestimonialsSection from "./sections/Testimonials.jsx"
 import PricingSection from "./sections/Pricing.jsx"
+import FAQs from "./sections/FAQs.jsx"
 import style from "./Landing.module.css"
 
 
@@ -23,7 +24,16 @@ const LandingPage = () => {
 
     return(
         <div className={style.landing}>
-            <Navbar scrollToSection={scrollToSection} refs={{ heroRef, featuresRef, howitworksRef, testimonialsRef, pricingRef }} />
+            <Navbar 
+                scrollToSection={scrollToSection} 
+                refs={{ 
+                    heroRef, 
+                    featuresRef, 
+                    howitworksRef, 
+                    testimonialsRef, 
+                    pricingRef 
+                }} 
+            />
                 <main>
                     <div ref={heroRef}><HeroSection /></div>
                     <TrustSection />
@@ -32,6 +42,7 @@ const LandingPage = () => {
                     <Demo />
                     <div ref={testimonialsRef}><TestimonialsSection /></div>
                     <div ref={pricingRef}><PricingSection /></div>
+                    <FAQs />
                 </main>
         </div>
     )

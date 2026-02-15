@@ -43,14 +43,14 @@
 
 .navLink {
   color: var(--text-primary);
-  font-size: var(--body-text-desktop);
+  font-size: var(--body-text);
   transition: transform 0.3s ease;
   display: inline-block;
   cursor: pointer;
 }
 
 .ctaContainer a {
-  font-size: var(--body-text-desktop);
+  font-size: var(--body-text);
   text-wrap: nowrap;
 }
 

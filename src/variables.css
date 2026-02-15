@@ -29,11 +29,11 @@
   --shadow-3: 0 25px 50px #9c9a9a;
 
   /* ===== Font sizes ===== */
-  --h1-desktop: 5.8rem;
-  --h2-desktop: 3.5rem;
-  --h3-desktop: 2.2rem;
-  --subheading-desktop: 1.8rem;
-  --body-text-desktop: 1.6rem;
-  --cta-desktop: 1.7rem;
-  --small-text-desktop: 1.2rem;
+  --h1: 5.8rem;
+  --h2: 3.5rem;
+  --h3: 2.2rem;
+  --subheading: 1.8rem;
+  --body-text: 1.6rem;
+  --cta: 1.7rem;
+  --small-text: 1.2rem;
 }

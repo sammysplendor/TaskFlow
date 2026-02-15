@@ -17,7 +17,7 @@
 }
 
 .startCta {
-  font-size: var(--cta-desktop);
+  font-size: var(--cta);
   color: var(--primarybg);
   font-weight: 500;
 }

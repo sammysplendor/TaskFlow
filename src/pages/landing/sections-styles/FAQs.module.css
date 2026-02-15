@@ -1,0 +1,50 @@
+/* ========== FAQs section Styling ========== */
+
+.mobile {
+  display: none;
+}
+
+.mobile.active {
+  display: block;
+}
+
+.opened {
+  display: none;
+}
+
+.opened.active {
+  display: block;
+}
+
+.questionsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: start;
+  align-items: start;
+  color: var(--text-primary);
+  font-size: var(--body-text);
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+}
+
+/* .answer {
+  display: none;
+} */
+
+.answer.active {
+  display: block;
+}
