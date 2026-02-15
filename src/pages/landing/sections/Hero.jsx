@@ -4,7 +4,7 @@ import dashboardMockup from '../../../assets/images/Dashboard mockup.jpg'
 
 const HeroSection = () => {
     return(
-        <div className={heroStyle.heroContentContainer}>
+        <section id='#hero' className={heroStyle.heroContentContainer}>
             <div className={heroStyle.heroTextContainer}>
                 <h1>Organize your tasks. Track progress. Flow effortlessly.</h1>
 
@@ -24,7 +24,7 @@ const HeroSection = () => {
             <div className={heroStyle.imageWrapper}>
                 <img src={dashboardMockup} alt="Hero image" />
             </div>
-        </div>
+        </section>
     )
 }
 

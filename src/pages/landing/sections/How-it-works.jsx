@@ -4,7 +4,7 @@ import image from '../../../assets/images/Anotated dashboard.jpg'
 
 const HowItWorks = () => {
     return(
-        <div className="sectionContainer">
+        <section id='#how-it-works' className="sectionContainer">
             <div className="sectionHeading">
                 <h2>Get started in minutes</h2>
 
@@ -62,7 +62,7 @@ const HowItWorks = () => {
             <div className={btnStyle.ctaContainer}>
                 <a href="" className={btnStyle.startCta}>Start for Free</a>
             </div>
-        </div>
+        </section>
     )
 }
 

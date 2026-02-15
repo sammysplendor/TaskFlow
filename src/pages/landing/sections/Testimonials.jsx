@@ -3,7 +3,7 @@ import { Star } from '@boxicons/react'
 
 const TestimonialsSection = () => {
     return(
-        <div className='sectionContainer'>
+        <section id='#testimonials' className='sectionContainer'>
             <div className='sectionHeading'>
                 <h2>Trusted by teams who value clarity and speed</h2>
 
@@ -58,7 +58,7 @@ const TestimonialsSection = () => {
                     <span className={style.text}>average satisfaction</span>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

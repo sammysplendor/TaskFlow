@@ -9,6 +9,11 @@
   justify-content: center;
   text-wrap: nowrap;
   border-radius: var(--border-lg);
+  transition: transform 0.3s ease;
+}
+
+.ctaContainer:hover {
+  transform: translateX(10px);
 }
 
 .startCta {

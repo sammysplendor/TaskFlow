@@ -3,7 +3,7 @@ import { ClipboardList, Calendar1, ChartPie, UsersRound, LayoutDashboard, Layers
 
 const FeaturesSection = () => {
     return(
-        <div className="sectionContainer">
+        <section id='#features' className="sectionContainer">
             <div className="sectionHeading">
                 <h2>Everything you need to stay in flow</h2>
                 <p>TaskFlow brings tasks, timelines, and team collaboration into one simple workspace.</p>
@@ -74,7 +74,7 @@ const FeaturesSection = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

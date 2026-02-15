@@ -44,25 +44,37 @@
 .navLink {
   color: var(--text-primary);
   font-size: var(--body-text-desktop);
-  text-wrap: nowrap;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .ctaContainer a {
-  color: var(--text-primary);
   font-size: var(--body-text-desktop);
   text-wrap: nowrap;
 }
 
-#loginBtn {
+.loginBtn {
+  display: inline-block;
   border: 1px solid var(--text-primary);
   padding: 0.6rem 2.4rem;
+  color: var(--text-primary);
   border-radius: var(--border-sm);
+  transition: transform 0.3s ease;
 }
 
-#signupBtn {
+.signupBtn {
+  display: inline-block;
   padding: 0.6rem 2rem;
   background: var(--primary-color);
   border: 1px solid var(--primary-color);
   color: var(--primarybg);
   border-radius: var(--border-sm);
+  transition: transform 0.3s ease;
+}
+
+.loginBtn:hover,
+.signupBtn:hover,
+.navLink:hover {
+  transform: translateY(-3px);
 }

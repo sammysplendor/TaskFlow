@@ -8,11 +8,19 @@
 
 html {
   font-size: 62.5%; /* (10px / 16px) x 100 = 62.5% */
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Geist";
   background-color: var(--primarybg);
+}
+
+html,
+body,
+#root {
+  height: auto;
+  overflow: visible;
 }
 
 a {
@@ -33,6 +41,7 @@ button {
   align-items: center;
   gap: 2rem;
   margin: 10rem 10rem 0;
+  /* scroll-margin-top: 106px; */
 }
 
 .sectionHeading {

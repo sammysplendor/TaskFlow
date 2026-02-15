@@ -58,15 +58,48 @@
 }
 
 .planCTA {
+  width: 100%;
+}
+
+.planCTA a {
   display: inline-block;
   text-wrap: nowrap;
   width: 100%;
   padding: 1rem 1.5rem;
   border-radius: var(--border-sm);
+  color: var(--primarybg);
   background: var(--primary-color);
   cursor: pointer;
+  transition: all 0.4s ease-in-out;
 }
 
-.planCTA a {
+.planCTA a:hover {
+  border: 1px solid var(--text-primary);
+  background: var(--primarybg);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.supportingText {
+  font-size: var(--small-text-desktop);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.supportingText span {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.infoIcon {
   color: var(--primarybg);
+  width: 1.7rem;
+  height: 1.7rem;
 }

@@ -1,9 +1,10 @@
 import style from '../sections-styles/Pricing.module.css'
 import { Check } from 'lucide-react'
+import { InfoCircle } from '@boxicons/react'
 
 const PricingSection = () => {
 return(
-    <div className="sectionContainer">
+    <section id='#pricing' className="sectionContainer">
         <div className="sectionHeading">
             <h2>Simple pricing that scales with your team</h2>
 
@@ -67,8 +68,13 @@ return(
                     <a href="">Contact sales</a>
                 </button>
             </div>
+
+            <p className={style.supportingText}>
+                <span><InfoCircle className={style.infoIcon} /> </span>
+                No credit card required. Cancel anytime.
+            </p>
         </div>
-    </div>
+    </section>
 )
 }
 
