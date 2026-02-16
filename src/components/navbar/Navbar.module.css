@@ -21,6 +21,7 @@
 .navbarContainer img {
   width: 20rem;
   transform: translateX(-22%);
+  cursor: pointer;
 }
 
 .navbarItems {

@@ -1,0 +1,25 @@
+.primaryBtn {
+  margin-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.supportingText {
+  font-size: var(--small-text);
+  color: var(--text-muted);
+}
+
+.loginLink {
+  font-size: var(--body-text);
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 1rem 2rem;
+  border-radius: var(--border-sm);
+  transition: box-shadow 0.3s ease;
+}
+
+.loginLink:hover {
+  box-shadow: var(--shadow-2);
+}

@@ -8,6 +8,7 @@ import Demo from "./sections/Demo.jsx"
 import TestimonialsSection from "./sections/Testimonials.jsx"
 import PricingSection from "./sections/Pricing.jsx"
 import FAQs from "./sections/FAQs.jsx"
+import CTASection from "./sections/CTA.jsx"
 import style from "./Landing.module.css"
 
 
@@ -43,6 +44,7 @@ const LandingPage = () => {
                     <div ref={testimonialsRef}><TestimonialsSection /></div>
                     <div ref={pricingRef}><PricingSection /></div>
                     <FAQs />
+                    <CTASection />
                 </main>
         </div>
     )
