@@ -9,6 +9,7 @@ import TestimonialsSection from "./sections/Testimonials.jsx"
 import PricingSection from "./sections/Pricing.jsx"
 import FAQs from "./sections/FAQs.jsx"
 import CTASection from "./sections/CTA.jsx"
+import Footer from "../../components/footer/LandingFooter.jsx"
 import style from "./Landing.module.css"
 
 
@@ -46,6 +47,7 @@ const LandingPage = () => {
                     <FAQs />
                     <CTASection />
                 </main>
+            <Footer />
         </div>
     )
 }
