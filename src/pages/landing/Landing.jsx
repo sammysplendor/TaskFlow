@@ -19,6 +19,7 @@ const LandingPage = () => {
     const howitworksRef = useRef(null)
     const testimonialsRef = useRef(null)
     const pricingRef = useRef(null)
+    const demoRef = useRef(null)
 
     const scrollToSection = (ref) => {
         ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -41,13 +42,15 @@ const LandingPage = () => {
                     <TrustSection />
                     <div ref={featuresRef}><FeaturesSection /></div>
                     <div ref={howitworksRef}><HowItWorks /></div>
-                    <Demo />
+                    <div ref={demoRef}><Demo /></div>
                     <div ref={testimonialsRef}><TestimonialsSection /></div>
                     <div ref={pricingRef}><PricingSection /></div>
                     <FAQs />
                     <CTASection />
                 </main>
-            <Footer />
+            <Footer
+                scrollToSection={scrollToSection} refs={{heroRef, featuresRef, pricingRef, demoRef}}
+            />
         </div>
     )
 }

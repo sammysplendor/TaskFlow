@@ -1,20 +1,21 @@
 import style from './LandingFooter.module.css'
 import logo from '../../assets/images/TaskFlow_logo_2.png'
 
-const Footer = () => {
+const Footer = ({ scrollToSection, refs }) => {
+
     return(
         <footer className={style.footerContainer}>
             <div className={style.footerItems}>
                 <div className={style.logo}>
-                    <img src={logo} alt="TaskFlow logo" width={180} />
+                    <li onClick={() => scrollToSection(refs.heroRef)}><img src={logo} alt="TaskFlow logo" width={180} /></li>
                     <p>Organize tasks. Flow better.</p>
                 </div>
 
                 <ul className={style.footerLinks}>
                     <p className={style.title}><b>Product</b></p>
-                    <li>Features</li>
-                    <li>Pricing</li>
-                    <li>Demo</li>
+                    <li onClick={() => scrollToSection(refs.featuresRef)}>Features</li>
+                    <li onClick={() => scrollToSection(refs.pricingRef)}>Pricing</li>
+                    <li onClick={() => scrollToSection(refs.demoRef)}>Demo</li>
                 </ul>
 
                 <ul className={style.footerLinks}>
