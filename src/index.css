@@ -14,14 +14,15 @@ html {
 body {
   font-family: "Geist";
   background-color: var(--primarybg);
+  /* min-height: 100vh; */
 }
 
-html,
+/* html,
 body,
 #root {
   height: auto;
   overflow: visible;
-}
+} */
 
 a {
   text-decoration: none;
@@ -41,7 +42,6 @@ button {
   align-items: center;
   gap: 2rem;
   margin: 10rem 10rem 0;
-  /* scroll-margin-top: 106px; */
 }
 
 .sectionHeading {
