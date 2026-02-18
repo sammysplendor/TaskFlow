@@ -1,6 +1,8 @@
 import './auth.css'
 import { User, Mail, Lock } from 'lucide-react'
 import { useState } from 'react'
+import { userData } from '../../data/mockData'
+import { useNavigate } from 'react-router-dom'
 
 const SignupForm = () => {
     const [ fullName, setFullName ] = useState("");
@@ -8,20 +10,26 @@ const SignupForm = () => {
     const [ password, setPassword ] = useState("");
     const [ confirmPassword, setConfirmPassword ] = useState("");
     const [ error, setError ] = useState("");
+    let  navigate  = useNavigate()
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        let hasError = false
+
         if(fullName.length < 2){
             setError("Name must be atleast 2 letters")
+            hasError = true;
         } else if(fullName.split(" ").length < 2){
             setError("Enter full name (First and Last name)")
+            hasError = true;
         } else{
             setError("")
         }
 
         if(!email.includes('@')){
             setError("Please enter a valid email")
+            hasError = true;
         } else{
             setError("")
         }
@@ -32,7 +40,27 @@ const SignupForm = () => {
             !/[!@#$%^&*(){}?<>|]/.test(password)
         ){
             setError("Must be at least 8 characters, including a number and a symbol.")
+            hasError = true;
         }
+
+        if(!confirmPassword === password){
+            setError("Password does not match")
+            hasError = true;
+        } else{
+            setError("")
+        }
+
+        if(hasError){
+            return
+        }
+
+        userData.name = fullName;
+        userData.email = email;
+        userData.password = password;
+
+        localStorage.setItem("user", JSON.stringify(userData));
+
+        navigate("/Login")        
     }
 
     return(
@@ -114,7 +142,7 @@ const SignupForm = () => {
                         By signing up you agree with TaskFlow <b><a href="#">Terms of Service </a></b> and 
                         <b> <a href="#">Privacy Policy</a></b>
                     </p>
-                    <p><i>Already have an account?</i> <b><a className='loginLink' href=""> Log In</a></b></p>
+                    <p><i>Already have an account?</i> <b><a className='loginLink' href="./Login"> Log In</a></b></p>
                 </div>
             </div>
         </div>

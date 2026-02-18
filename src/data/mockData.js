@@ -25,3 +25,6 @@ export const FAQsData = [
       "TaskFlow is fully responsive and works seamlessly on desktop and mobile.",
   },
 ];
+
+// ========== USER DATA ========== //
+export const userData = {};
