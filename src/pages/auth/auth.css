@@ -5,6 +5,30 @@
   min-height: 100vh;
 }
 
+.returnIcon {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: var(--border-sm);
+  background: #e0dfe0;
+  transition: background 0.2s ease;
+
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+}
+
+.returnIcon:hover {
+  background: #ebebeb;
+}
+
+.returnLink {
+  color: var(--text-primary);
+}
+
 .formContainer {
   display: flex;
   flex-direction: column;
@@ -109,9 +133,23 @@ input::placeholder {
   align-items: center;
   font-size: var(--small-text);
   color: var(--text-primary);
+  text-align: center;
 }
 
 .loginLink,
 .signupLink {
   color: var(--text-primary);
+}
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .formContainer {
+    width: 80%;
+  }
+
+  .returnIcon {
+    top: 15rem;
+  }
 }

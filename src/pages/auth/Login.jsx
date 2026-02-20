@@ -1,5 +1,5 @@
 import './auth.css'
-import { Mail, Lock } from 'lucide-react'
+import { Mail, Lock, ArrowLeft } from 'lucide-react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -26,6 +26,11 @@ const LoginForm = () => {
 
     return (
         <div className="pageView">
+            
+            <a className='returnLink' href="/">
+                <span className='returnIcon'><ArrowLeft /></span>
+            </a>
+
             <div className="formContainer">
                 <div className="formHeading">
                     <h3>Log In</h3>
@@ -64,7 +69,7 @@ const LoginForm = () => {
                 </form>
 
                 <div className="formFooter">
-                    <p><i>Don't have an account?</i> <b><a className='signupLink' href=""> Sign Up</a></b></p>
+                    <p><i>Don't have an account?</i> <b><a className='signupLink' href="/signup"> Sign Up</a></b></p>
                 </div>
             </div>
         </div>

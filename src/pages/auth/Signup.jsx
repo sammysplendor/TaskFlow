@@ -1,5 +1,5 @@
 import './auth.css'
-import { User, Mail, Lock } from 'lucide-react'
+import { User, Mail, Lock, ArrowLeft } from 'lucide-react'
 import { useState } from 'react'
 import { userData } from '../../data/mockData'
 import { useNavigate } from 'react-router-dom'
@@ -65,6 +65,11 @@ const SignupForm = () => {
 
     return(
         <div className='pageView'>
+
+            <a className='returnLink' href="/">
+                <span className='returnIcon'><ArrowLeft /></span>
+            </a>
+
             <div className="formContainer">
                 <div className="formHeading">
                     <h3>Sign Up</h3>
