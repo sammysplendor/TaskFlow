@@ -1,6 +1,6 @@
 import style from '../sections-styles/Pricing.module.css'
 import { Check } from 'lucide-react'
-import { InfoCircle } from '@boxicons/react'
+import { InfoCircle, Star } from '@boxicons/react'
 
 const PricingSection = () => {
 return(
@@ -34,7 +34,7 @@ return(
             <div className={`${style.plan} ${style.scale}`}>
                 <p className={style.planName}>Pro Plan <b>(Most Popular)</b></p>
 
-                <h2 className={style.price}>$8/month</h2>
+                <h2 className={style.price}>$8/month <Star pack='filled' color='#dbdb1e'/></h2>
 
                 <ul className={style.features}>
                     <span><b>Features:</b></span>

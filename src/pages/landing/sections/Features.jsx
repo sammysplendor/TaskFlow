@@ -11,7 +11,7 @@ const FeaturesSection = () => {
 
             <div className={style.featuresContainer}>
                 <div className={style.feature}>
-                    <div><ClipboardList size={32} color='#142959'/></div>
+                    <div><ClipboardList className={style.featureIcon} /></div>
 
                     <h3>Smart Task Management</h3>
 
@@ -22,7 +22,7 @@ const FeaturesSection = () => {
                 </div>
 
                 <div className={style.feature}>
-                    <div><Calendar1 size={32} color='#142959'/></div>
+                    <div><Calendar1 className={style.featureIcon} /></div>
 
                     <h3> Visual Task Timeline</h3>
 
@@ -33,7 +33,7 @@ const FeaturesSection = () => {
                 </div>
 
                 <div className={style.feature}>
-                    <div><ChartPie size={32} color='#142959'/></div>
+                    <div><ChartPie className={style.featureIcon} /></div>
 
                     <h3>Real-Time Progress Tracking</h3>
 
@@ -44,7 +44,7 @@ const FeaturesSection = () => {
                 </div>
 
                 <div className={style.feature}>
-                    <div><UsersRound size={32} color='#142959'/></div>
+                    <div><UsersRound className={style.featureIcon} /></div>
 
                     <h3>Team Collaboration</h3>
 
@@ -54,7 +54,7 @@ const FeaturesSection = () => {
                 </div>
 
                 <div className={style.feature}>
-                    <div><LayoutDashboard size={32} color='#142959'/></div>
+                    <div><LayoutDashboard className={style.featureIcon} /></div>
 
                     <h3>Clean & Focused Dashboard</h3>
 
@@ -65,7 +65,7 @@ const FeaturesSection = () => {
                 </div>
 
                 <div className={style.feature}>
-                    <div><Layers size={32} color='#142959'/></div>
+                    <div><Layers className={style.featureIcon} /></div>
 
                     <h3>Flexible for Individuals & Teams</h3>
 

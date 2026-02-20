@@ -1,11 +1,13 @@
 import './auth.css'
 import { Mail, Lock } from 'lucide-react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ error, setError ] = useState("");
+    let navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,6 +21,7 @@ const LoginForm = () => {
 
         setError("");
 
+        navigate("./dashboard")
     }
 
     return (
@@ -26,7 +29,6 @@ const LoginForm = () => {
             <div className="formContainer">
                 <div className="formHeading">
                     <h3>Log In</h3>
-                    <p>Log in to your TaskFlow account</p>
                 </div>
 
                 <form method="GET" className="formFields" onClick={handleSubmit}>

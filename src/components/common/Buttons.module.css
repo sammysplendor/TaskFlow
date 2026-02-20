@@ -21,3 +21,13 @@
   color: var(--primarybg);
   font-weight: 500;
 }
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .ctaContainer {
+    width: 100%;
+    border-radius: var(--border-md);
+  }
+}

@@ -12,3 +12,29 @@
 .dashboardDemo img:hover {
   width: 80rem;
 }
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .dashboardDemo img {
+    width: 45rem;
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .dashboardDemo img:hover {
+    width: 45rem;
+  }
+}

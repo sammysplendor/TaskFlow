@@ -23,3 +23,12 @@
 .loginLink:hover {
   box-shadow: var(--shadow-2);
 }
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .primaryBtn {
+    width: 100%;
+  }
+}

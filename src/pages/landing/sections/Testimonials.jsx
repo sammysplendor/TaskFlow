@@ -13,32 +13,34 @@ const TestimonialsSection = () => {
                 </p>
             </div>
 
-            <div className={style.reviews}>
-                <div className={style.review}>
-                    <p>
-                        “TaskFlow completely changed how our team plans work. 
-                        The timeline view alone helped us spot delays before they became problems.”
-                    </p>
-                    <p className={style.name}><b>Sarah M.</b></p>
-                    <p className={style.role}><span>Product Manager</span> — NovaLabs</p>
-                </div>
+            <div className={style.reviewsContainer}>
+                <div className={style.reviews}>
+                    <div className={style.review}>
+                        <p>
+                            “TaskFlow completely changed how our team plans work. 
+                            The timeline view alone helped us spot delays before they became problems.”
+                        </p>
+                        <p className={style.name}><b>Sarah M.</b></p>
+                        <p className={style.role}><span>Product Manager</span> — NovaLabs</p>
+                    </div>
 
-                <div className={style.review}>
-                    <p>
-                       “It's clean, fast, and actually enjoyable to use. 
-                       We moved from spreadsheets and never looked back.”
-                    </p>
-                    <p className={style.name}><b>Daniel O.</b></p>
-                    <p className={style.role}><span>Operations Lead</span> — Flowbyte</p>
-                </div>
+                    <div className={style.review}>
+                        <p>
+                            “It's clean, fast, and actually enjoyable to use. 
+                            We moved from spreadsheets and never looked back.”
+                        </p>
+                        <p className={style.name}><b>Daniel O.</b></p>
+                        <p className={style.role}><span>Operations Lead</span> — Flowbyte</p>
+                    </div>
 
-                <div className={style.review}>
-                    <p>
-                        “What I love most is the clarity. Everyone knows what to do, when to do it, 
-                        and who owns what.”
-                    </p>
-                    <p className={style.name}><b>Aisha K.</b></p>
-                    <p className={style.role}><span>Team Lead</span> — Brightline</p>
+                    <div className={style.review}>
+                        <p>
+                            “What I love most is the clarity. Everyone knows what to do, when to do it, 
+                            and who owns what.”
+                        </p>
+                        <p className={style.name}><b>Aisha K.</b></p>
+                        <p className={style.role}><span>Team Lead</span> — Brightline</p>
+                    </div>
                 </div>
             </div>
 

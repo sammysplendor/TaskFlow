@@ -53,3 +53,28 @@
 .stat .text {
   font-size: var(--small-text);
 }
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .reviewsContainer {
+    width: 100%;
+    overflow: hidden;
+  }
+  .reviews {
+    overflow-x: auto;
+    overflow-y: visible;
+    flex-wrap: nowrap;
+    padding-block: 2rem;
+  }
+
+  .review {
+    flex-shrink: 0;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 8rem;
+  }
+}

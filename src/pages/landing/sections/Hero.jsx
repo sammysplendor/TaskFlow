@@ -16,7 +16,7 @@ const HeroSection = () => {
             </div>
 
             <div className={btnStyle.ctaContainer}>
-                <a href="" className={btnStyle.startCta}>Start for Free</a>
+                <a href="/signup" className={btnStyle.startCta}>Start for Free</a>
             </div>
 
             <p><span>Trusted by teams who get things done • No credit card required</span></p>

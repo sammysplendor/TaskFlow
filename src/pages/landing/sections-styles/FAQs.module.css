@@ -4,7 +4,7 @@
   display: none;
 }
 
-.mobile.active {
+.desktop {
   display: block;
 }
 
@@ -51,4 +51,21 @@
   max-height: 20rem;
   padding: 1rem 0;
   opacity: 0.6;
+}
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .accordionContainer {
+    width: 90%;
+  }
 }

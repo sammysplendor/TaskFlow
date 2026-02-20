@@ -46,3 +46,22 @@
 .copyright {
   font-size: var(--small-text);
 }
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .footerContainer {
+    gap: 6rem;
+  }
+
+  .footerItems {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+  }
+
+  .footerLinks {
+    gap: 5rem;
+  }
+}

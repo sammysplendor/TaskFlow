@@ -42,6 +42,9 @@
 .price {
   font-size: var(--h3);
   margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .features {
@@ -102,4 +105,25 @@
   color: var(--primarybg);
   width: 1.7rem;
   height: 1.7rem;
+}
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .pricePlans {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 70%;
+  }
+
+  .plan {
+    width: 100%;
+    gap: 4rem;
+  }
+
+  .scale {
+    height: auto;
+  }
 }

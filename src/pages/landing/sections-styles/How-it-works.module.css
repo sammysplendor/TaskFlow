@@ -58,3 +58,27 @@
   font-size: var(--body-text);
   margin-top: 6rem;
 }
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .content img {
+    width: 50rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+  }
+
+  .steps {
+    padding-inline: 4rem;
+  }
+
+  .supportingText {
+    margin-top: 5rem;
+    text-align: center;
+  }
+}

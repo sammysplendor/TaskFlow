@@ -71,3 +71,26 @@
     transform: translateX(-50%);
   }
 }
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .trustSection {
+    margin-top: -34rem;
+  }
+
+  .trustSection h3 {
+    padding-inline: 4rem;
+  }
+
+  .logosContainer::before {
+    left: 0;
+    background: linear-gradient(to right, #f9fafb 0%, transparent 40%);
+  }
+
+  .logosContainer::after {
+    right: 0;
+    background: linear-gradient(to left, #f9fafb 0%, transparent 40%);
+  }
+}

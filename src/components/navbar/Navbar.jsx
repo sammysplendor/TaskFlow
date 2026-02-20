@@ -26,13 +26,13 @@ return(
         </ul>
 
         <ul className={style.ctaContainer}>
-            <li><a href="" className={style.loginBtn} title='Log In'>Log In</a></li>
-            <li><a href="" className={style.signupBtn} title='Sign Up'>Sign Up</a></li>
+            <li><a href="/login" className={style.loginBtn} title='Log In'>Log In</a></li>
+            <li><a href="/signup" className={style.signupBtn} title='Sign Up'>Sign Up</a></li>
         </ul>
     </div>
 
     <div className={style.cta}>
-        <a href="" className={style.signupBtn} title='Sign Up'>Sign Up</a>
+        <a href="/signup" className={style.signupBtn} title='Sign Up'>Sign Up</a>
         <div onClick={toggleMenu}>
             {!isOpen ? (
                 <div className={style.hamburger}>

@@ -8,8 +8,8 @@ function AppRoutes(){
      <BrowserRouter>
         <Routes>
             <Route path="/" element={<LandingPage />}/>
-            {/* <Route path="/" element={<SignupForm />}/>
-            <Route path="/Login" element={<LoginForm />}/> */}
+            <Route path="/Signup" element={<SignupForm />}/>
+            <Route path="/Login" element={<LoginForm />}/>
         </Routes>
      </BrowserRouter>
     )

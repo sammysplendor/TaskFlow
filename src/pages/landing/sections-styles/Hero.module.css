@@ -48,3 +48,19 @@
   margin-top: 0.8rem;
   box-shadow: var(--shadow-1);
 }
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .heroContentContainer {
+    padding: 0 4rem;
+    gap: 5rem;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    max-width: 100rem;
+    height: 12rem;
+  }
+}

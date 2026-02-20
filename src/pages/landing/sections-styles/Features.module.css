@@ -20,6 +20,11 @@
   box-shadow: var(--shadow-2);
 }
 
+.featureIcon {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+}
+
 .feature h3 {
   font-size: var(--h3);
   color: var(--text-primary);
@@ -28,4 +33,21 @@
 .feature p {
   font-size: var(--body-text);
   color: var(--text-muted);
+  text-align: left;
+}
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .featuresContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .feature {
+    width: 100%;
+  }
 }

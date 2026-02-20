@@ -4,7 +4,7 @@ import { FAQsData } from '../../../data/mockData'
 import { useState } from 'react'
 
 const FAQs = () => {
-    const [isClicked, setIsClicked] = useState(false)
+    const [isClicked, setIsClicked] = useState(false);
 
     const toggleAccordion = (index) => {
         setIsClicked(prevClicked => prevClicked === index ? null : index)

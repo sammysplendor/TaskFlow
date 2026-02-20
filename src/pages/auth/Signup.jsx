@@ -17,24 +17,24 @@ const SignupForm = () => {
 
         let hasError = false
 
-        if(fullName.length < 2){
+        if (fullName.length < 2) {
             setError("Name must be atleast 2 letters")
             hasError = true;
-        } else if(fullName.split(" ").length < 2){
+        } else if (fullName.split(" ").length < 2) {
             setError("Enter full name (First and Last name)")
             hasError = true;
-        } else{
+        } else {
             setError("")
         }
 
-        if(!email.includes('@')){
+        if (!email.includes('@')) {
             setError("Please enter a valid email")
             hasError = true;
-        } else{
+        } else {
             setError("")
         }
 
-        if(
+        if (
             password.length < 8 ||
             !/\d/.test(password) ||
             !/[!@#$%^&*(){}?<>|]/.test(password)
@@ -46,11 +46,11 @@ const SignupForm = () => {
         if(!confirmPassword === password){
             setError("Password does not match")
             hasError = true;
-        } else{
+        } else {
             setError("")
         }
 
-        if(hasError){
+        if(hasError) {
             return
         }
 
@@ -68,7 +68,6 @@ const SignupForm = () => {
             <div className="formContainer">
                 <div className="formHeading">
                     <h3>Sign Up</h3>
-                    <p>Create your TaskFlow account</p>
                 </div>
 
                 <form className="formFields" method='POST' onSubmit={handleSubmit}>
