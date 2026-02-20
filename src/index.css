@@ -59,3 +59,41 @@ button {
 .sectionHeading p {
   font-size: var(--subheading);
 }
+
+/* =============== RESPONSIVENESS =============== */
+
+/* ============ LARGE (Laptops): 1024px - 1280px ============ */
+@media (max-width: 72rem) {
+  /* 1150px / 16px = 72rem */
+
+  html {
+    font-size: 56.2%; /* (9px/16px) x 100 = 56.2% */
+  }
+}
+
+/* ============ MEDIUM (Tablets): 768px - 1023px ============ */
+@media (max-width: 43rem) {
+  /* 690px / 16px = 43rem */
+
+  html {
+    font-size: 50%; /* (8px/16px) x 100 = 50% */
+  }
+}
+
+/* ============ SMALL (Phone landscape): 576px - 767px ============ */
+@media (max-width: 32rem) {
+  /* 510px / 16px = 32rem */
+
+  html {
+    font-size: 43.8%; /* (7px/16px) x 100 = 43.8% */
+  }
+}
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  html {
+    font-size: 43.8%; /* (7px/16px) x 100 = 43.8% */
+  }
+}

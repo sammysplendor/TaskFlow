@@ -79,3 +79,82 @@
 .navLink:hover {
   transform: translateY(-3px);
 }
+
+.cta {
+  display: none;
+}
+
+.hamburger,
+.closeIcon {
+  cursor: pointer;
+  display: none;
+}
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .navbarContainer {
+    padding: 2.5rem 4rem;
+  }
+
+  .cta {
+    gap: 3rem;
+    display: flex;
+  }
+
+  .hamburger,
+  .closeIcon {
+    display: block;
+  }
+
+  .navbarItems,
+  .navLinks,
+  .ctaContainer {
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 70%;
+  }
+
+  .navLinks {
+    align-items: start;
+    gap: 8rem;
+  }
+
+  .navLink {
+    font-size: var(--subheading);
+  }
+
+  .navbarItems {
+    position: absolute;
+    width: 30rem;
+    height: 65vh;
+    background: var(--primarybg);
+    top: -500px;
+    right: 0;
+    z-index: 9;
+    transition: all 0.6s ease;
+  }
+
+  .ctaContainer {
+    gap: 3rem;
+  }
+
+  .ctaContainer li {
+    width: 100%;
+  }
+
+  .loginBtn,
+  .signupBtn {
+    width: 100%;
+    text-align: center;
+    padding-block: 1rem;
+  }
+
+  .navbarItems.active {
+    top: 50px;
+    transition: all 0.6s ease;
+  }
+}

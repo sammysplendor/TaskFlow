@@ -7,9 +7,9 @@ function AppRoutes(){
     return (
      <BrowserRouter>
         <Routes>
-            {/* <Route path="/" element={<LandingPage />}/> */}
-            <Route path="/" element={<SignupForm />}/>
-            <Route path="/" element={<LoginForm />}/>
+            <Route path="/" element={<LandingPage />}/>
+            {/* <Route path="/" element={<SignupForm />}/>
+            <Route path="/Login" element={<LoginForm />}/> */}
         </Routes>
      </BrowserRouter>
     )
