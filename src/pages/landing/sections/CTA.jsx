@@ -12,13 +12,13 @@ const CTASection = () => {
 
             <div className={style.primaryBtn}>
                 <div className={btnStyle.ctaContainer}>
-                    <a href="" className={btnStyle.startCta}>Get Started for Free</a>
+                    <a href="/signup" className={btnStyle.startCta}>Get Started for Free</a>
                 </div>
 
                 <span className={style.supportingText}>No credit card required · Set up in minutes</span>
             </div>
 
-            <a href="#" className={style.loginLink}>Log In</a>
+            <a href="/login" className={style.loginLink}>Log In</a>
         </section>
     )
 }

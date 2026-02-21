@@ -1,0 +1,11 @@
+/* ========== SIDEBAR STYLING ========== */
+
+aside {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-color-2);
+  width: 25rem;
+}
