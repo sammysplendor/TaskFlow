@@ -1,0 +1,13 @@
+/* ========== DASHBOARD STYLING ========== */
+
+.parentContainer {
+  height: 100vh;
+  display: flex;
+  gap: 2rem;
+  align-items: start;
+}
+
+.mainContent {
+  width: 100%;
+  height: 100vh;
+}
