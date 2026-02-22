@@ -3,11 +3,114 @@
 .parentContainer {
   height: 100vh;
   display: flex;
-  gap: 2rem;
   align-items: start;
+  gap: 1rem;
 }
 
 .mainContent {
   width: 100%;
   height: 100vh;
+  padding: 2rem;
+}
+
+/* =============== Top Bar =============== */
+
+.topBar {
+  display: grid;
+  grid-template-columns: 3.5fr 1fr;
+  column-gap: 4rem;
+}
+
+.searchIcon {
+  width: 2.3rem;
+  height: 2.3rem;
+  opacity: 0.5;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: var(--secondary-color-2);
+  border-radius: var(--border-lg);
+  width: 90%;
+}
+
+.searchBar input {
+  width: 90%;
+  font-family: inherit;
+  font-size: var(--app-txt);
+}
+
+.searchBar input::placeholder {
+  font-style: italic;
+  font-size: var(--app-txt);
+}
+
+.leftTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: var(--secondary-color-2);
+  border-radius: var(--border-lg);
+}
+
+.notificationIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.leftTopBar span {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: var(--bg-topcard);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =============== Project Title =============== */
+
+.projectTitle {
+  margin-top: 1rem;
+}
+
+.projectTitle span {
+  padding: 0.5rem 1.5rem;
+  color: var(--bg-topcard);
+  background: var(--primary-color);
+  font-size: var(--subheading);
+  font-weight: 500;
+  display: flex;
+  gap: 1.5rem;
+  width: fit-content;
+  border-radius: var(--border-lg);
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  background: var(--bg-topcard);
+  border-radius: 0 0 var(--border-sm) var(--border-sm);
+  padding: 1.5rem;
+  margin-left: 1.6rem;
+  width: fit-content;
+}
+
+.dropdownItem {
+  font-size: var(--app-txt);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-sm);
+}
+
+.dropdownItem:hover {
+  background: var(--primary-color);
+  color: var(--bg-topcard);
 }
