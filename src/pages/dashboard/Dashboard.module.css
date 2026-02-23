@@ -128,29 +128,81 @@
 /* ------------ Upper Sections ------------ */
 .upperSections {
   display: grid;
-  grid-template-columns: 3fr 2fr 1fr;
+  grid-template-columns: 3fr 1.5fr 1fr;
   column-gap: 1rem;
 }
 
 /* --- Timeline --- */
-.timelineSection {
+.section {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   border-radius: var(--border-lg);
   background: var(--secondary-color-2);
+  height: fit-content;
 }
 
-.tlHeading {
+.heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 2.5rem;
+}
+
+.heading h3 {
+  font-size: var(--section-title);
+  font-weight: 600;
+}
+
+.heading span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem;
+  border: 1px solid var(--text-muted-light);
+  border-radius: var(--border-lg);
+  color: var(--text-muted);
+  cursor: pointer;
 }
 
 .dateRow {
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
+}
+
+.dateItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--app-txt);
+}
+
+.tlContent {
+  background-color: var(--bg-topcard);
+  padding: 1rem;
+  margin: 0 1rem 1rem;
+  border-radius: var(--border-lg);
+}
+
+.brokenLines {
+  width: 2px;
+  height: 12rem;
+  border-left: 1px dashed var(--text-primary);
+  margin: 0.5rem 0;
+}
+
+.tasksForDay {
+  display: flex;
+  flex-direction: column; /* prevents stacking */
+  gap: 0.5rem; /* spacing between tasks */
+  width: 100%;
+}
+
+.taskItem {
+  padding: 0.4rem;
+  background: var(--accent-light);
+  border-radius: 4px;
+  text-align: center;
 }
 
 /* --------------------------------------- */

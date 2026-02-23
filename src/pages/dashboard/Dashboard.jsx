@@ -2,7 +2,7 @@ import style from "./Dashboard.module.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { Bell, Search, ChevronDown } from "lucide-react";
 import { User, CaretBigDown } from "@boxicons/react";
-import { projects, project001 } from "../../data/mockData";
+import { projects, project001, tasks } from "../../data/mockData";
 import { useState } from "react";
 
 const Dashboard = () => {
@@ -74,9 +74,9 @@ const Dashboard = () => {
           {/* ========== Upper sections ========== */}
 
           <div className={style.upperSections}>
-            {/* ----- Timeline ----- */}
-            <div className={style.timelineSection}>
-              <div className={style.tlHeading}>
+            {/* -------- Timeline -------- */}
+            <div className={`${style.section} ${style.timelineSection}`}>
+              <div className={style.heading}>
                 <h3>Timeline</h3>
                 <span>
                   Day view <ChevronDown size={16} />
@@ -85,16 +85,36 @@ const Dashboard = () => {
 
               <div className={style.tlContent}>
                 <div className={style.dateRow}>
-                  {projectDays.map((day, index) => (
-                    <div key={index} className={style.dateItem}>
-                      {day.getDate()}
+                  {projectDays.map((day) => (
+                    <div key={day.toDateString()}>
+                      <div className={style.dateItem}>{day.getDate()}</div>
+
+                      <div className={style.brokenLines}></div>
+                      <div className={style.tasksForDay}>
+                        {tasks
+                          .filter(
+                            (task) =>
+                              new Date(task.date).toDateString() ===
+                              day.toDateString(),
+                          )
+                          .map((task) => (
+                            <div key={task.id} className={style.taskItem}>
+                              {task.title}
+                            </div>
+                          ))}
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className={style.statusSection}></div>
+            {/* -------- Status -------- */}
+            <div className={`${style.section} ${style.statusSection}`}>
+              <div className={style.heading}>
+                <h3>Status</h3>
+              </div>
+            </div>
 
             <div className={style.meetingSection}></div>
           </div>
