@@ -5,6 +5,7 @@
   display: flex;
   align-items: start;
   gap: 1rem;
+  background: var(--app-bg);
 }
 
 .mainContent {
@@ -114,3 +115,42 @@
   background: var(--primary-color);
   color: var(--bg-topcard);
 }
+
+/* =============== Sections =============== */
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-block: 1rem;
+}
+
+/* ------------ Upper Sections ------------ */
+.upperSections {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+  column-gap: 1rem;
+}
+
+/* --- Timeline --- */
+.timelineSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: var(--border-lg);
+  background: var(--secondary-color-2);
+}
+
+.tlHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.dateRow {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* --------------------------------------- */

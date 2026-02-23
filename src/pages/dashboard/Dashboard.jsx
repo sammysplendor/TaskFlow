@@ -1,11 +1,12 @@
 import style from "./Dashboard.module.css";
 import Sidebar from "../../components/sidebar/Sidebar";
-import { Bell, Divide, Search } from "lucide-react";
+import { Bell, Search, ChevronDown } from "lucide-react";
 import { User, CaretBigDown } from "@boxicons/react";
-import { projects } from "../../data/mockData";
+import { projects, project001 } from "../../data/mockData";
 import { useState } from "react";
 
 const Dashboard = () => {
+  // =============== PROJECT TITLE LOGIC =============== //
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(projects[0]);
 
@@ -13,6 +14,16 @@ const Dashboard = () => {
     setSelectedProject(project);
     isOpen(false);
   };
+
+  // =============== TIMELINE LOGIC =============== //
+  const projectStart = new Date(project001.startDate);
+  const projectDays = [];
+
+  for (let i = 0; i < project001.duration; i++) {
+    const day = new Date(projectStart);
+    day.setDate(projectStart.getDate() + i);
+    projectDays.push(day);
+  }
 
   return (
     <div className={style.parentContainer}>
@@ -60,8 +71,28 @@ const Dashboard = () => {
         </div>
 
         <section className={style.sections}>
+          {/* ========== Upper sections ========== */}
+
           <div className={style.upperSections}>
-            <div className={style.timelineSection}></div>
+            {/* ----- Timeline ----- */}
+            <div className={style.timelineSection}>
+              <div className={style.tlHeading}>
+                <h3>Timeline</h3>
+                <span>
+                  Day view <ChevronDown size={16} />
+                </span>
+              </div>
+
+              <div className={style.tlContent}>
+                <div className={style.dateRow}>
+                  {projectDays.map((day, index) => (
+                    <div key={index} className={style.dateItem}>
+                      {day.getDate()}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             <div className={style.statusSection}></div>
 
