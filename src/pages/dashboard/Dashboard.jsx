@@ -1,9 +1,10 @@
 import style from "./Dashboard.module.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { Bell, Search, ChevronDown } from "lucide-react";
-import { User, CaretBigDown } from "@boxicons/react";
+import { User, CaretBigDown, Circle } from "@boxicons/react";
 import { projects, project001, tasks } from "../../data/mockData";
 import { useState } from "react";
+import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
 const Dashboard = () => {
   // =============== PROJECT TITLE LOGIC =============== //
@@ -24,6 +25,20 @@ const Dashboard = () => {
     day.setDate(projectStart.getDate() + i);
     projectDays.push(day);
   }
+
+  // =============== COMPLETION STATUS CHART LOGIC =============== //
+  const completedTasks = tasks.filter((task) => task.status === "done").length;
+  const totalTask = tasks.length;
+
+  const percentage =
+    totalTask === 0 ? 0 : Math.round((completedTasks / totalTask) * 100);
+
+  const statusData = [
+    { name: "done", value: percentage },
+    { name: "undone", value: 100 - percentage },
+  ];
+
+  const colors = ["#142959", "#dbdb1e"];
 
   return (
     <div className={style.parentContainer}>
@@ -112,7 +127,44 @@ const Dashboard = () => {
             {/* -------- Status -------- */}
             <div className={`${style.section} ${style.statusSection}`}>
               <div className={style.heading}>
-                <h3>Status</h3>
+                <h3>Completion Status</h3>
+              </div>
+
+              <ResponsiveContainer width="100%" height={185}>
+                <PieChart>
+                  <Pie
+                    data={statusData}
+                    dataKey="value"
+                    innerRadius={40}
+                    outerRadius={70}
+                    startAngle={90}
+                    endAngle={-270}
+                    paddingAngle={2}
+                  >
+                    {statusData.map((entry, index) => (
+                      <Cell key={index} fill={colors[index]} />
+                    ))}
+                  </Pie>
+                  <text
+                    x="50%"
+                    y="50%"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fontSize="2.4rem"
+                    fontWeight="bold"
+                  >
+                    {percentage}%
+                  </text>
+                </PieChart>
+              </ResponsiveContainer>
+
+              <div className={style.statusLabel}>
+                <span>
+                  <Circle pack="filled" className={style.done} /> Done
+                </span>
+                <span>
+                  <Circle pack="filled" className={style.undone} /> Undone
+                </span>
               </div>
             </div>
 
