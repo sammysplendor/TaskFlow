@@ -51,42 +51,48 @@ export const tasks = [
     title: "User Research",
     date: "2026-03-03",
     status: "done",
-    assignee: "Amanda",
+    assignee: "Amanda (Project manager)",
+    progress: "Completed",
   },
   {
     id: 2,
     title: "Wireframing",
     date: "2026-03-04",
     status: "done",
-    assignee: "John",
+    assignee: "John (UI/UX designer)",
+    progress: "Completed",
   },
   {
     id: 3,
     title: "UI Design",
     date: "2026-03-05",
     status: "done",
-    assignee: "Mary",
+    assignee: "Mary (UI/UX designer)",
+    progress: "In progress",
   },
   {
     id: 4,
     title: "Frontend Development",
     date: "2026-03-06",
     status: "done",
-    assignee: "Samuel",
+    assignee: "Samuel (Frontend developer)",
+    progress: "In progress",
   },
   {
     id: 5,
-    title: "API Integration",
+    title: "API & Integration",
     date: "2026-03-07",
     status: "undone",
-    assignee: "David",
+    assignee: "David (backend developer)",
+    progress: "Not started",
   },
   {
     id: 6,
     title: "Testing & Debugging",
     date: "2026-03-08",
     status: "undone",
-    assignee: "Martin",
+    assignee: "Martin (Frontend developer)",
+    progress: "Not started",
   },
   {
     id: 7,
@@ -94,11 +100,50 @@ export const tasks = [
     date: "2026-03-09",
     status: "undone",
     assignee: "Team",
+    progress: "Not started",
+  },
+];
+
+export const taskOverview = [
+  {
+    id: 1,
+    task: "Conduct user research interviews",
+    priority: "High",
+  },
+
+  {
+    id: 2,
+    task: "Create low-fidelity wireframes",
+    priority: "Low",
+  },
+
+  {
+    id: 3,
+    task: "Design high-fidelity UI screens",
+    priority: "High",
+  },
+
+  {
+    id: 4,
+    task: "Implement responsive frontend",
+    priority: "Medium",
+  },
+
+  {
+    id: 5,
+    task: "Build and integrate API",
+    priority: "High",
+  },
+
+  {
+    id: 6,
+    task: "Test, review, and finalize delivery",
+    priority: "Medium",
   },
 ];
 
 // ========== MEETING DATA ========== //
 export const nextMeeting = {
-  datetime: "2026-03-08T20:00:00Z",
+  datetime: "2026-03-07T20:00:00Z",
   location: "Teams Meeting",
 };

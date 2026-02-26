@@ -9,7 +9,13 @@ import {
   MapPin,
 } from "lucide-react";
 import { User, CaretBigDown, Circle } from "@boxicons/react";
-import { projects, project001, tasks, nextMeeting } from "../../data/mockData";
+import {
+  projects,
+  project001,
+  tasks,
+  nextMeeting,
+  taskOverview,
+} from "../../data/mockData";
 import { useState } from "react";
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
@@ -49,6 +55,25 @@ const Dashboard = () => {
 
   // =============== MEETING SCHEDULE LOGIC =============== //
   const meetingDate = new Date(nextMeeting.datetime);
+
+  // =============== OVERVIEW TABLE =============== //
+  const priorityColor = (priority) => {
+    if (priority === "High") {
+      return "#f91919";
+    } else if (priority === "Medium") {
+      return "#257629";
+    } else {
+      return "#c9b940";
+    }
+  };
+
+  // =============== WORKLOAD TABLE =============== //
+  const dueDate = (dateString) => {
+    const date = new Date(dateString);
+    const month = date.toLocaleString("en-NG", { month: "short" }) + ".";
+
+    return `${month} ${date.getDate()}, ${date.getFullYear()}`;
+  };
 
   return (
     <div className={style.parentContainer}>
@@ -222,10 +247,74 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className={style.lowerSections}>
-            <div className={style.taskSection}></div>
+          {/* ========== Lower sections ========== */}
 
-            <div className={style.workloadSection}></div>
+          <div className={style.lowerSections}>
+            {/* -------- Task Overview -------- */}
+
+            <div className={style.section}>
+              <div className={style.heading}>
+                <h3>Task Overview</h3>
+                <button>
+                  <a href="#">Add Task</a>
+                </button>
+              </div>
+
+              <div className={style.sectionContent}>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Task</th>
+                      <th>Priority</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {taskOverview.map((item) => (
+                      <tr key={item.id}>
+                        <td className={style.leftColumn}>
+                          {item.id}. {item.task}
+                        </td>
+                        <td
+                          style={{ color: priorityColor(item.priority) }}
+                          className={style.rightColumn}
+                        >
+                          {item.priority}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className={style.section}>
+              <div className={style.heading}>
+                <h3>Task Overview</h3>
+              </div>
+
+              <div className={style.sectionContent}>
+                <table className={style.workloadTable}>
+                  <thead>
+                    <tr>
+                      <th>Task No.</th>
+                      <th>Assigned To</th>
+                      <th>Due Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tasks.map((task) => (
+                      <tr key={task.id} className={style.smallTxt}>
+                        <td>Task {task.id}</td>
+                        <td>{task.assignee}</td>
+                        <td>{dueDate(task.date)}</td>
+                        <td>{task.progress}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
       </div>
