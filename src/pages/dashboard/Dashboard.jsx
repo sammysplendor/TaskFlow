@@ -1,8 +1,15 @@
 import style from "./Dashboard.module.css";
 import Sidebar from "../../components/sidebar/Sidebar";
-import { Bell, Search, ChevronDown } from "lucide-react";
+import {
+  Bell,
+  Search,
+  ChevronDown,
+  CalendarDays,
+  Clock,
+  MapPin,
+} from "lucide-react";
 import { User, CaretBigDown, Circle } from "@boxicons/react";
-import { projects, project001, tasks } from "../../data/mockData";
+import { projects, project001, tasks, nextMeeting } from "../../data/mockData";
 import { useState } from "react";
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
@@ -39,6 +46,9 @@ const Dashboard = () => {
   ];
 
   const colors = ["#142959", "#dbdb1e"];
+
+  // =============== MEETING SCHEDULE LOGIC =============== //
+  const meetingDate = new Date(nextMeeting.datetime);
 
   return (
     <div className={style.parentContainer}>
@@ -98,7 +108,7 @@ const Dashboard = () => {
                 </span>
               </div>
 
-              <div className={style.tlContent}>
+              <div className={style.sectionContent}>
                 <div className={style.dateRow}>
                   {projectDays.map((day) => (
                     <div key={day.toDateString()}>
@@ -112,8 +122,18 @@ const Dashboard = () => {
                               new Date(task.date).toDateString() ===
                               day.toDateString(),
                           )
-                          .map((task) => (
-                            <div key={task.id} className={style.taskItem}>
+                          .map((task, index) => (
+                            <div
+                              key={task.id}
+                              className={style.taskItem}
+                              style={{
+                                top: `${index * 50 + Math.random() * 5}rem`,
+                                transform:
+                                  index % 2 === 0
+                                    ? "translateY(-250%)"
+                                    : "translateY(0%)",
+                              }}
+                            >
                               {task.title}
                             </div>
                           ))}
@@ -130,7 +150,7 @@ const Dashboard = () => {
                 <h3>Completion Status</h3>
               </div>
 
-              <ResponsiveContainer width="100%" height={185}>
+              <ResponsiveContainer width="100%" height={190}>
                 <PieChart>
                   <Pie
                     data={statusData}
@@ -168,7 +188,38 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className={style.meetingSection}></div>
+            <div className={`${style.section} ${style.meetingSection}`}>
+              <div className={style.heading}>
+                <h3>Next Meeting</h3>
+              </div>
+
+              <div
+                className={`${style.sectionContent} ${style.scheduleContainer}`}
+              >
+                <p>Sprint Review</p>
+                <div className={style.meetingSchedule}>
+                  <span>
+                    <CalendarDays size={12} />{" "}
+                    {meetingDate.toLocaleDateString("en-NG", {
+                      weekday: "long",
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </span>
+                  <span>
+                    <Clock size={12} />{" "}
+                    {meetingDate.toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </span>
+                  <span>
+                    <MapPin size={12} /> {nextMeeting.location}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className={style.lowerSections}>

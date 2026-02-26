@@ -96,3 +96,9 @@ export const tasks = [
     assignee: "Team",
   },
 ];
+
+// ========== MEETING DATA ========== //
+export const nextMeeting = {
+  datetime: "2026-03-08T20:00:00Z",
+  location: "Teams Meeting",
+};
