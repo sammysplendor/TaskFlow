@@ -2,8 +2,18 @@ import style from "./Sidebar.module.css";
 import logo from "../../assets/images/TaskFlow_logo_1.png";
 import { Tachometer, WorkflowAlt, Task, Community } from "@boxicons/react";
 import { LogOut, CalendarDays, Settings } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  // =============== LOGOUT LOGIC =============== //
+  let navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+
+    navigate("/");
+  };
+
   return (
     <aside>
       <div>
@@ -39,7 +49,7 @@ const Sidebar = () => {
       </div>
 
       <div className={style.sidebarFooter}>
-        <span>
+        <span onClick={handleLogout}>
           <LogOut className={style.icon} /> Logout
         </span>
       </div>

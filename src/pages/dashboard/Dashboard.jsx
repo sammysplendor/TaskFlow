@@ -15,6 +15,7 @@ import {
   tasks,
   nextMeeting,
   taskOverview,
+  progressOptions,
 } from "../../data/mockData";
 import { useState } from "react";
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
@@ -73,6 +74,16 @@ const Dashboard = () => {
     const month = date.toLocaleString("en-NG", { month: "short" }) + ".";
 
     return `${month} ${date.getDate()}, ${date.getFullYear()}`;
+  };
+
+  const [taskState, setTaskState] = useState(tasks);
+
+  const handleProgressChange = (id, newProgress) => {
+    setTaskState((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, progress: newProgress } : task,
+      ),
+    );
   };
 
   return (
@@ -303,12 +314,25 @@ const Dashboard = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {tasks.map((task) => (
+                    {taskState.map((task) => (
                       <tr key={task.id} className={style.smallTxt}>
                         <td>Task {task.id}</td>
                         <td>{task.assignee}</td>
                         <td>{dueDate(task.date)}</td>
-                        <td>{task.progress}</td>
+                        <td>
+                          <select
+                            value={task.progress}
+                            onChange={(e) =>
+                              handleProgressChange(task.id, e.target.value)
+                            }
+                          >
+                            {progressOptions.map((option) => (
+                              <option value={option} key={option}>
+                                {option}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
                       </tr>
                     ))}
                   </tbody>

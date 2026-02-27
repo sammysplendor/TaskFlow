@@ -83,7 +83,7 @@ export const tasks = [
     title: "API & Integration",
     date: "2026-03-07",
     status: "undone",
-    assignee: "David (backend developer)",
+    assignee: "David (Backend developer)",
     progress: "Not started",
   },
   {
@@ -141,6 +141,8 @@ export const taskOverview = [
     priority: "Medium",
   },
 ];
+
+export const progressOptions = ["Not started", "In progress", "Completed"];
 
 // ========== MEETING DATA ========== //
 export const nextMeeting = {

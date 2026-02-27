@@ -337,3 +337,12 @@ tbody td {
 .smallTxt {
   font-size: 1.1rem;
 }
+
+select {
+  font-size: 1rem;
+  border: none;
+}
+
+option {
+  font-size: 1rem;
+}
