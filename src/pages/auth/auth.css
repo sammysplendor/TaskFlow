@@ -107,6 +107,10 @@ input::placeholder {
   letter-spacing: 1rem;
 }
 
+.errMsg {
+  color: var(--accent-color-1);
+}
+
 .formFields button {
   width: 100%;
   margin-top: 1rem;

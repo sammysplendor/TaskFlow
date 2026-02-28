@@ -22,6 +22,9 @@ import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
 const Dashboard = () => {
   // =============== PROJECT TITLE LOGIC =============== //
+  const [searchInput, setSearchInput] = useState("");
+
+  // =============== PROJECT TITLE LOGIC =============== //
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(projects[0]);
 
