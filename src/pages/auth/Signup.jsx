@@ -144,7 +144,9 @@ const SignupForm = () => {
             <span className="errMsg">{errors.confirmPassword}</span>
           </div>
 
-          <button type="submit">Create account</button>
+          <button type="submit" onClick={() => navigate("/Login")}>
+            Create account
+          </button>
         </form>
 
         <div className="formFooter">

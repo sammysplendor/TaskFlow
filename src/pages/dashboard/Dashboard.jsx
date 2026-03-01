@@ -22,9 +22,6 @@ import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
 const Dashboard = () => {
   // =============== PROJECT TITLE LOGIC =============== //
-  const [searchInput, setSearchInput] = useState("");
-
-  // =============== PROJECT TITLE LOGIC =============== //
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(projects[0]);
 
@@ -89,6 +86,24 @@ const Dashboard = () => {
     );
   };
 
+  // =============== SEARCH LOGIC =============== //
+  const [searchInput, setSearchInput] = useState("");
+
+  const filteredTasks = taskState.filter(
+    (task) =>
+      task.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+      task.date.toLowerCase().includes(searchInput.toLowerCase()) ||
+      task.status.toLowerCase().includes(searchInput.toLowerCase()) ||
+      task.assignee.toLowerCase().includes(searchInput.toLowerCase()) ||
+      task.progress.toLowerCase().includes(searchInput.toLowerCase()),
+  );
+
+  const filteredTaskOverview = taskOverview.filter(
+    (item) =>
+      (item.task?.toLowerCase() || "").includes(searchInput.toLowerCase()) ||
+      (item.priority?.toLowerCase() || "").includes(searchInput.toLowerCase()),
+  );
+
   return (
     <div className={style.parentContainer}>
       <Sidebar />
@@ -99,7 +114,12 @@ const Dashboard = () => {
         <div className={style.topBar}>
           <div className={style.searchBar}>
             <Search className={style.searchIcon} />
-            <input type="text" placeholder="Search here..." />
+            <input
+              type="text"
+              placeholder="Search here..."
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
           </div>
 
           <div className={style.leftTopBar}>
@@ -283,7 +303,7 @@ const Dashboard = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {taskOverview.map((item) => (
+                    {filteredTaskOverview.map((item) => (
                       <tr key={item.id}>
                         <td className={style.leftColumn}>
                           {item.id}. {item.task}
@@ -317,7 +337,7 @@ const Dashboard = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {taskState.map((task) => (
+                    {filteredTasks.map((task) => (
                       <tr key={task.id} className={style.smallTxt}>
                         <td>Task {task.id}</td>
                         <td>{task.assignee}</td>
