@@ -7,6 +7,8 @@ import {
   CalendarDays,
   Clock,
   MapPin,
+  Menu,
+  X,
 } from "lucide-react";
 import { User, CaretBigDown, Circle } from "@boxicons/react";
 import {
@@ -21,6 +23,12 @@ import { useState } from "react";
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
 const Dashboard = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
+
   // =============== PROJECT TITLE LOGIC =============== //
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(projects[0]);
@@ -106,12 +114,18 @@ const Dashboard = () => {
 
   return (
     <div className={style.parentContainer}>
-      <Sidebar />
+      <Sidebar isOpen={isSidebarOpen} />
 
       <div className={style.mainContent}>
         {/* ---------- Top Bar ---------- */}
 
         <div className={style.topBar}>
+          {isSidebarOpen ? (
+            <X className={style.closeIcon} onClick={toggleSidebar} />
+          ) : (
+            <Menu className={style.hamburger} onClick={toggleSidebar} />
+          )}
+
           <div className={style.searchBar}>
             <Search className={style.searchIcon} />
             <input
@@ -294,7 +308,7 @@ const Dashboard = () => {
                 </button>
               </div>
 
-              <div className={style.sectionContent}>
+              <div className={`${style.sectionContent} ${style.overview}`}>
                 <table>
                   <thead>
                     <tr>
@@ -321,45 +335,49 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className={style.section}>
-              <div className={style.heading}>
-                <h3>Task Overview</h3>
-              </div>
+            {/* -------- Team Workload -------- */}
 
-              <div className={style.sectionContent}>
-                <table className={style.workloadTable}>
-                  <thead>
-                    <tr>
-                      <th>Task No.</th>
-                      <th>Assigned To</th>
-                      <th>Due Date</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {filteredTasks.map((task) => (
-                      <tr key={task.id} className={style.smallTxt}>
-                        <td>Task {task.id}</td>
-                        <td>{task.assignee}</td>
-                        <td>{dueDate(task.date)}</td>
-                        <td>
-                          <select
-                            value={task.progress}
-                            onChange={(e) =>
-                              handleProgressChange(task.id, e.target.value)
-                            }
-                          >
-                            {progressOptions.map((option) => (
-                              <option value={option} key={option}>
-                                {option}
-                              </option>
-                            ))}
-                          </select>
-                        </td>
+            <div className={style.sectionWrapper}>
+              <div className={`${style.section} ${style.workloadSection}`}>
+                <div className={style.heading}>
+                  <h3>Team Workload</h3>
+                </div>
+
+                <div className={style.sectionContent}>
+                  <table className={style.workloadTable}>
+                    <thead>
+                      <tr>
+                        <th>Task No.</th>
+                        <th>Assigned To</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {filteredTasks.map((task) => (
+                        <tr key={task.id} className={style.smallTxt}>
+                          <td>Task {task.id}</td>
+                          <td>{task.assignee}</td>
+                          <td>{dueDate(task.date)}</td>
+                          <td>
+                            <select
+                              value={task.progress}
+                              onChange={(e) =>
+                                handleProgressChange(task.id, e.target.value)
+                              }
+                            >
+                              {progressOptions.map((option) => (
+                                <option value={option} key={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>

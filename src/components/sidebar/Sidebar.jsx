@@ -4,7 +4,7 @@ import { Tachometer, WorkflowAlt, Task, Community } from "@boxicons/react";
 import { LogOut, CalendarDays, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen }) => {
   // =============== LOGOUT LOGIC =============== //
   let navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside>
+    <aside className={`${style.sidebar} ${isOpen ? style.open : style.closed}`}>
       <div>
         <div className={style.logoContainer}>
           <img src={logo} alt="Taskflow logo" />

@@ -1,6 +1,6 @@
 /* ========== SIDEBAR STYLING ========== */
 
-aside {
+.sidebar {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -56,4 +56,32 @@ aside {
 .inactiveTab:hover,
 .sidebarFooter span:hover {
   transform: translateX(8px);
+}
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .sidebar {
+    width: 30rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 9rem 3rem;
+    transition: transform 0.4s ease;
+  }
+
+  .menu {
+    gap: 1.5rem;
+  }
+
+  .closed {
+    transform: translateX(-100%);
+  }
+
+  .open {
+    transform: translateX(0);
+  }
 }

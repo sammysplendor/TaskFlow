@@ -26,6 +26,14 @@ a {
   column-gap: 4rem;
 }
 
+.hamburger {
+  display: none;
+}
+
+.closeIcon {
+  display: none;
+}
+
 .searchIcon {
   width: 2.3rem;
   height: 2.3rem;
@@ -345,4 +353,115 @@ select {
 
 option {
   font-size: 1rem;
+}
+
+/* ============ X-SMALL (Phone portrait): < 576px ============ */
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  /* --------- Top Navbar --------- */
+  .topBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 8rem;
+    background: var(--app-bg);
+
+    padding: 3rem;
+  }
+
+  .hamburger,
+  .closeIcon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .searchBar {
+    width: 50%;
+  }
+
+  .leftTopBar {
+    gap: 4rem;
+  }
+
+  /* --------- Project Title --------- */
+  .projectTitle {
+    margin-top: 9rem;
+  }
+
+  .dropdownIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  /* -------------- SECTIONS -------------- */
+  .sections {
+    margin: 0 1rem;
+    margin-top: 2rem;
+  }
+
+  .heading h3 {
+    font-size: var(--subheading);
+  }
+
+  /* --------- Upper Section --------- */
+  .sections .upperSections {
+    grid-template-columns: 1.5fr 1fr;
+    row-gap: 1.5rem;
+  }
+
+  .timelineSection:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* --------- Lower Section --------- */
+  .lowerSections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  thead,
+  tbody td,
+  .overview tbody td {
+    font-size: 1.6rem;
+  }
+
+  .workloadTable tbody td {
+    padding: 1rem;
+  }
+
+  td {
+    overflow: visible;
+  }
+
+  .workloadSection .sectionContent table,
+  .workloadSection .sectionContent {
+    min-width: 65rem;
+  }
+
+  .sectionWrapper {
+    width: 100%;
+  }
+
+  .workloadSection {
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 1rem;
+  }
+
+  select {
+    font-size: 1.6rem;
+  }
+
+  option {
+    font-size: 1.6rem;
+  }
 }
