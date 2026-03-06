@@ -1,0 +1,11 @@
+.pageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.placeholderTxt {
+  opacity: 0.5;
+  font-size: var(--h1);
+}

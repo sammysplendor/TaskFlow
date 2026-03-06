@@ -2,9 +2,12 @@ import style from "./Sidebar.module.css";
 import logo from "../../assets/images/TaskFlow_logo_1.png";
 import { Tachometer, WorkflowAlt, Task, Community } from "@boxicons/react";
 import { LogOut, CalendarDays, Settings } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 const Sidebar = ({ isOpen }) => {
+  const getLinkClass = ({ isActive }) =>
+    isActive ? style.activeTab : style.inactiveTab;
+
   // =============== LOGOUT LOGIC =============== //
   let navigate = useNavigate();
 
@@ -22,36 +25,37 @@ const Sidebar = ({ isOpen }) => {
         </div>
 
         <div className={style.menu}>
-          <span className={style.activeTab}>
+          <NavLink to="/" className={getLinkClass}>
             <Tachometer className={style.icon} /> Dashboard
-          </span>
+          </NavLink>
 
-          <span className={style.inactiveTab}>
+          <NavLink to="/projects" className={getLinkClass}>
             <WorkflowAlt className={style.icon} /> Projects
-          </span>
+          </NavLink>
 
-          <span className={style.inactiveTab}>
+          <NavLink to="/dashboard/tasks" className={getLinkClass}>
             <Task className={style.icon} /> My Tasks
-          </span>
+          </NavLink>
 
-          <span className={style.inactiveTab}>
+          <NavLink to="/dashboard/team" className={getLinkClass}>
             <Community className={style.icon} /> Team
-          </span>
+          </NavLink>
 
-          <span className={style.inactiveTab}>
+          <NavLink to="/dashboard/calender" className={getLinkClass}>
             <CalendarDays className={style.icon} /> Calender
-          </span>
+          </NavLink>
 
-          <span className={style.inactiveTab}>
+          <NavLink to="/dashboard/settings" className={getLinkClass}>
             <Settings className={style.icon} /> Settings
-          </span>
+          </NavLink>
         </div>
       </div>
 
       <div className={style.sidebarFooter}>
-        <span onClick={handleLogout}>
-          <LogOut className={style.icon} /> Logout
-        </span>
+        <button className={style.logoutBtn} onClick={handleLogout}>
+          <LogOut className={style.icon} />
+          Logout
+        </button>
       </div>
     </aside>
   );

@@ -66,6 +66,9 @@ a {
   width: 90%;
   font-family: inherit;
   font-size: var(--app-txt);
+  background: none;
+  border: none;
+  outline: none;
 }
 
 .searchBar input::placeholder {

@@ -1,0 +1,27 @@
+.layout {
+  height: 100vh;
+  background: var(--app-bg);
+  display: flex;
+  width: 100%;
+}
+
+.content {
+  height: 100vh;
+}
+
+@media (max-width: 31rem) {
+  /* 498px / 16px = 31rem */
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .content span {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .content img {
+    width: 4rem;
+  }
+}

@@ -12,6 +12,14 @@
   border-radius: 0 var(--border-lg) var(--border-lg) 0;
 }
 
+.closed {
+  transform: translateX(0);
+}
+
+.open {
+  transform: translateX(-100%);
+}
+
 .logoContainer img {
   width: 20rem;
 }
@@ -34,8 +42,9 @@
   height: 2.6rem;
 }
 
-.menu span,
-.sidebarFooter span {
+.menu a,
+.sidebarFooter a,
+.sidebarFooter button {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -47,6 +56,10 @@
   cursor: pointer;
 }
 
+.sidebarFooter button {
+  background: none;
+}
+
 .activeTab {
   background: var(--primary-color);
   color: var(--bg-topcard);
@@ -54,7 +67,7 @@
 }
 
 .inactiveTab:hover,
-.sidebarFooter span:hover {
+.sidebarFooter button:hover {
   transform: translateX(8px);
 }
 
@@ -69,8 +82,12 @@
     top: 0;
     bottom: 0;
     z-index: 10;
-    padding: 9rem 3rem;
+    padding: 12rem 3rem;
     transition: transform 0.4s ease;
+  }
+
+  .sidebar > div {
+    width: 100%;
   }
 
   .menu {
