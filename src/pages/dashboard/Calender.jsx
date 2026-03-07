@@ -6,7 +6,7 @@ import { Menu, Bell } from "lucide-react";
 import { User } from "@boxicons/react";
 import Sidebar from "../../components/sidebar/Sidebar";
 
-const Projects = () => {
+const Calender = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -42,4 +42,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Calender;

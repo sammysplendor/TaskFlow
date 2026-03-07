@@ -25,15 +25,15 @@ const Sidebar = ({ isOpen }) => {
         </div>
 
         <div className={style.menu}>
-          <NavLink to="/" className={getLinkClass}>
+          <NavLink to="/dashboard" end className={getLinkClass}>
             <Tachometer className={style.icon} /> Dashboard
           </NavLink>
 
-          <NavLink to="/projects" className={getLinkClass}>
+          <NavLink to="/dashboard/projects" className={getLinkClass}>
             <WorkflowAlt className={style.icon} /> Projects
           </NavLink>
 
-          <NavLink to="/dashboard/tasks" className={getLinkClass}>
+          <NavLink to="/dashboard/mytasks" className={getLinkClass}>
             <Task className={style.icon} /> My Tasks
           </NavLink>
 

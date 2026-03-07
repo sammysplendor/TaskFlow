@@ -41,7 +41,7 @@ const LoginForm = () => {
           <h3>Log In</h3>
         </div>
 
-        <form method="GET" className="formFields" onClick={handleSubmit}>
+        <form method="GET" className="formFields" onSubmit={handleSubmit}>
           <div className="field">
             <div>
               <label htmlFor="email">Email address</label>
