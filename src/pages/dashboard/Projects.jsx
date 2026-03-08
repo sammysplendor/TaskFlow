@@ -1,5 +1,5 @@
 import style from "./Dashboard.module.css";
-import Placeholder from "../../components/common/placeholder";
+import Placeholder from "../../components/common/Placeholder";
 import { useState } from "react";
 import taskflowIcon from "../../assets/icons/taskflow_icon.png";
 import { Menu, Bell } from "lucide-react";
