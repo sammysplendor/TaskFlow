@@ -12,13 +12,17 @@
   border-radius: 0 var(--border-lg) var(--border-lg) 0;
 }
 
-.closed {
+.sidebar.open {
+  left: 0;
+}
+
+/* .closed {
   transform: translateX(0);
 }
 
 .open {
   transform: translateX(-100%);
-}
+} */
 
 .logoContainer img {
   width: 20rem;
@@ -84,6 +88,7 @@
     z-index: 10;
     padding: 12rem 3rem;
     transition: transform 0.4s ease;
+    transform: translateX(-100%);
   }
 
   .sidebar > div {
@@ -94,11 +99,15 @@
     gap: 1.5rem;
   }
 
-  .closed {
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* .closed {
     transform: translateX(-100%);
   }
 
   .open {
     transform: translateX(0);
-  }
+  } */
 }
