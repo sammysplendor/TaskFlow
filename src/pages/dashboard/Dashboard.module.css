@@ -356,6 +356,44 @@ tbody td {
   font-size: 1.3rem;
 }
 
+.modal {
+  width: 30rem;
+  background: var(--app-bg);
+  border-radius: var(--border-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  gap: 2rem;
+  box-shadow: var(--shadow-3);
+  padding: 2rem;
+
+  position: fixed;
+  bottom: 25rem;
+  left: 60rem;
+  z-index: 50;
+}
+
+.modal select {
+  outline: none;
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  border: 1px solid var(--text-muted);
+  padding: 1rem;
+  border-radius: var(--border-sm);
+}
+
+.saveTaskBtn {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: var(--primary-color);
+  color: var(--bg-topcard);
+  border-radius: var(--border-sm);
+}
+
 /* --- Team Workload --- */
 .smallTxt {
   font-size: 1.1rem;

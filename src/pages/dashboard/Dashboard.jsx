@@ -66,6 +66,26 @@ const Dashboard = () => {
   // =============== MEETING SCHEDULE LOGIC =============== //
   const meetingDate = new Date(nextMeeting.datetime);
 
+  // =============== ADD TASK LOGIC =============== //
+  const [showModal, setShowModal] = useState(false);
+  const handleModal = () => {
+    setShowModal((prev) => !prev);
+  };
+
+  const [_projecttasks, setProjecttasks] = useState([]);
+  const [title, setTitle] = useState("");
+  const [priority, setPriority] = useState("");
+
+  const handleAddTask = () => {
+    const newTask = {
+      id: Date.now(),
+      title: title,
+      priority: priority,
+    };
+
+    setProjecttasks((prev) => [...prev, newTask]);
+  };
+
   // =============== OVERVIEW TABLE =============== //
   const priorityColor = (priority) => {
     if (priority === "High") {
@@ -332,10 +352,32 @@ const Dashboard = () => {
             <div className={style.section}>
               <div className={style.heading}>
                 <h3>Task Overview</h3>
-                <button>
-                  <a href="#">Add Task</a>
-                </button>
+                <button onClick={handleModal}>Add Task</button>
               </div>
+
+              {showModal && (
+                <form className={style.modal} onSubmit={handleAddTask}>
+                  <input
+                    type="text"
+                    placeholder="Enter task title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                  />
+
+                  <select
+                    value={priority}
+                    onChange={(e) => setPriority(e.target.value)}
+                  >
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
+
+                  <button type="submit" className={style.saveTaskBtn}>
+                    Save
+                  </button>
+                </form>
+              )}
 
               <div className={`${style.sectionContent} ${style.overview}`}>
                 <table>
