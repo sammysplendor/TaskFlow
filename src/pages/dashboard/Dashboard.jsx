@@ -72,19 +72,26 @@ const Dashboard = () => {
     setShowModal((prev) => !prev);
   };
 
-  const [_projecttasks, setProjecttasks] = useState([]);
+  const [projecttasks, setProjecttasks] = useState([]);
   const [title, setTitle] = useState("");
   const [priority, setPriority] = useState("");
 
-  const handleAddTask = () => {
+  const handleAddTask = (e) => {
+    e.preventDefault();
+
     const newTask = {
       id: Date.now(),
-      title: title,
+      task: title,
       priority: priority,
     };
 
     setProjecttasks((prev) => [...prev, newTask]);
+    setShowModal(false);
+    setTitle("");
+    setPriority("");
   };
+
+  const allTasks = [...taskOverview, ...projecttasks];
 
   // =============== OVERVIEW TABLE =============== //
   const priorityColor = (priority) => {
@@ -132,7 +139,7 @@ const Dashboard = () => {
       task.progress.toLowerCase().includes(searchInput.toLowerCase()),
   );
 
-  const filteredTaskOverview = taskOverview.filter(
+  const filteredTaskOverview = allTasks.filter(
     (item) =>
       (item.task?.toLowerCase() || "").includes(searchInput.toLowerCase()) ||
       (item.priority?.toLowerCase() || "").includes(searchInput.toLowerCase()),
@@ -356,53 +363,58 @@ const Dashboard = () => {
               </div>
 
               {showModal && (
-                <form className={style.modal} onSubmit={handleAddTask}>
-                  <input
-                    type="text"
-                    placeholder="Enter task title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                  />
+                <div className={style.modalOverlay}>
+                  <form className={style.modal} onSubmit={handleAddTask}>
+                    <input
+                      type="text"
+                      placeholder="Enter task title"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                    />
 
-                  <select
-                    value={priority}
-                    onChange={(e) => setPriority(e.target.value)}
-                  >
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                  </select>
+                    <select
+                      value={priority}
+                      onChange={(e) => setPriority(e.target.value)}
+                    >
+                      <option value="">Select priority</option>
+                      <option value="Low">Low</option>
+                      <option value="Medium">Medium</option>
+                      <option value="High">High</option>
+                    </select>
 
-                  <button type="submit" className={style.saveTaskBtn}>
-                    Save
-                  </button>
-                </form>
+                    <button type="submit" className={style.saveTaskBtn}>
+                      Save
+                    </button>
+                  </form>
+                </div>
               )}
 
-              <div className={`${style.sectionContent} ${style.overview}`}>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Task</th>
-                      <th>Priority</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {filteredTaskOverview.map((item) => (
-                      <tr key={item.id}>
-                        <td className={style.leftColumn}>
-                          {item.id}. {item.task}
-                        </td>
-                        <td
-                          style={{ color: priorityColor(item.priority) }}
-                          className={style.rightColumn}
-                        >
-                          {item.priority}
-                        </td>
+              <div className={style.overviewWrapper}>
+                <div className={`${style.sectionContent} ${style.overview}`}>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Task</th>
+                        <th>Priority</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {filteredTaskOverview.map((item, index) => (
+                        <tr key={item.id}>
+                          <td className={style.leftColumn}>
+                            {index + 1}. {item.task}
+                          </td>
+                          <td
+                            style={{ color: priorityColor(item.priority) }}
+                            className={style.rightColumn}
+                          >
+                            {item.priority}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
 
