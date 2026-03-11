@@ -10,6 +10,7 @@ import {
   MapPin,
   Menu,
   X,
+  Trash2,
 } from "lucide-react";
 import { User, CaretBigDown, Circle } from "@boxicons/react";
 import {
@@ -102,6 +103,11 @@ const Dashboard = () => {
     } else {
       return "#c9b940";
     }
+  };
+
+  // =============== DELETE TASK LOGIC =============== //
+  const handleDeleteTask = (id) => {
+    setProjecttasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
   // =============== WORKLOAD TABLE =============== //
@@ -385,6 +391,12 @@ const Dashboard = () => {
                     <button type="submit" className={style.saveTaskBtn}>
                       Save
                     </button>
+                    <button
+                      onClick={() => setShowModal(false)}
+                      className={style.cancelBtn}
+                    >
+                      Cancel
+                    </button>
                   </form>
                 </div>
               )}
@@ -409,6 +421,12 @@ const Dashboard = () => {
                             className={style.rightColumn}
                           >
                             {item.priority}
+                          </td>
+                          <td>
+                            <Trash2
+                              className={style.deleteIcon}
+                              onClick={() => handleDeleteTask(item.id)}
+                            />
                           </td>
                         </tr>
                       ))}

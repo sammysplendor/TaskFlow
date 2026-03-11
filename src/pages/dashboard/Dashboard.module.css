@@ -389,7 +389,7 @@ tbody td {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: space-around;
   gap: 2rem;
 }
@@ -415,6 +415,22 @@ tbody td {
   background: var(--primary-color);
   color: var(--bg-topcard);
   border-radius: var(--border-sm);
+  cursor: pointer;
+}
+
+.cancelBtn {
+  width: 30%;
+  padding: 1rem 2rem;
+  background: transparent;
+  border-radius: var(--border-sm);
+  cursor: pointer;
+}
+
+.deleteIcon {
+  height: 1.6rem;
+  width: 1.6rem;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 /* --- Team Workload --- */
