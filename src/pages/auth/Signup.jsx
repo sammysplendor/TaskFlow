@@ -1,7 +1,6 @@
 import "./auth.css";
 import { User, Mail, Lock, ArrowLeft } from "lucide-react";
 import { useState } from "react";
-import { userData } from "../../data/mockData";
 import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
@@ -21,14 +20,10 @@ const SignupForm = () => {
       errorMessage.fullName = "Name must be atleast 2 letters";
     } else if (fullName.split(" ").length < 2) {
       errorMessage.fullName = "Enter full name (First and Last name)";
-    } else {
-      errorMessage.fullName = "";
     }
 
     if (!email.includes("@")) {
       errorMessage.email = "Please enter a valid email";
-    } else {
-      errorMessage.email = "";
     }
 
     if (
@@ -42,8 +37,6 @@ const SignupForm = () => {
 
     if (confirmPassword !== password) {
       errorMessage.confirmPassword = "Password does not match";
-    } else {
-      errorMessage.confirmPassword = "";
     }
 
     if (Object.keys(errorMessage).length > 0) {
@@ -51,11 +44,17 @@ const SignupForm = () => {
       return;
     }
 
-    userData.name = fullName;
-    userData.email = email;
-    userData.password = password;
+    const newUser = {
+      name: fullName,
+      email: email,
+      password: password,
+    };
 
-    localStorage.setItem("user", JSON.stringify(userData));
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    users.push(newUser);
+
+    localStorage.setItem("users", JSON.stringify(users));
 
     navigate("/Login");
   };
@@ -144,9 +143,7 @@ const SignupForm = () => {
             <span className="errMsg">{errors.confirmPassword}</span>
           </div>
 
-          <button type="submit" onClick={() => navigate("/Login")}>
-            Create account
-          </button>
+          <button type="submit">Create account</button>
         </form>
 
         <div className="formFooter">

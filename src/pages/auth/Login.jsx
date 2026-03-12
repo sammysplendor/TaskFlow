@@ -12,20 +12,25 @@ const LoginForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const savedUser = JSON.parse(localStorage.getItem("user"));
+    if (!email || !password) {
+      setError("Please fill in the fields");
+      return;
+    }
 
-    if (
-      !savedUser ||
-      savedUser.email !== email ||
-      savedUser.password !== password
-    ) {
+    const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+    const validUser = savedUsers.find(
+      (user) => user.email === email && user.password === password,
+    );
+
+    if (!validUser) {
       setError("Incorrect Email or Password");
       return;
     }
 
     setError("");
 
-    navigate("./Dashboard");
+    navigate("/Dashboard");
   };
 
   return (
@@ -73,11 +78,9 @@ const LoginForm = () => {
             </div>
           </div>
 
-          {error && <p>{error}</p>}
+          {error && <p className="errMsg">{error}</p>}
 
-          <button type="submit" onClick={() => navigate("/Dashboard")}>
-            Log In
-          </button>
+          <button type="submit">Log In</button>
         </form>
 
         <div className="formFooter">

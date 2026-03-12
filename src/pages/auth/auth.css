@@ -95,20 +95,23 @@ input {
   padding: 0.3rem 0;
   width: 90%;
   font-family: inherit;
-  font-size: var(--small-text);
+  font-size: var(--app-txt);
 }
 
 input::placeholder {
-  font-size: var(--small-text);
+  font-size: var(--app-txt);
   font-family: inherit;
 }
 
 .passwordInput {
   letter-spacing: 1rem;
+  font-size: var(--h3);
+  font-weight: 600;
 }
 
 .errMsg {
   color: var(--accent-color-1);
+  font-size: var(--app-txt);
 }
 
 .formFields button {

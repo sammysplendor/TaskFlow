@@ -26,9 +26,6 @@ export const FAQsData = [
   },
 ];
 
-// ========== USER DATA ========== //
-export const userData = {};
-
 // ========== PROJECTS DATA ========== //
 export const projects = [
   "Website Redesign Sprint",
